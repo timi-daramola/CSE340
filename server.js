@@ -17,7 +17,7 @@ const static = require("./routes/static")
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
-app.set("layout", "./layouts/layout") // not at views root
+app.set("layout", "./layouts/index")
 
 /* ***********************
  * Routes
@@ -36,7 +36,7 @@ const host = process.env.HOST
  *************************/
 
 app.get("/", (req, res) => {
-  res.status(200).render("./layouts/layout", {title: "Home Page"})
+  res.status(200).render("./layouts/index", {title: "Home Page"})
 })
 
 app.listen(port, () => {
