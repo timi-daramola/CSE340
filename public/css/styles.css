@@ -5,12 +5,32 @@
   box-sizing: border-box;
 }
 
-.siteName{
-  text-decoration: none;
-  background-color: aqua;
-  height: 50px;
+body {
+  width: 80%;
+  margin: 0 auto;
 }
 
-nav{
-  color: greenyellow;
+header {
+  display: flex;
+  padding: 20px;
+  background-color: #c3c3c3c3;
+}
+
+nav {
+  display: flex;
+  margin-top: -15px;
+  word-spacing: 30px;
+  margin-left: 15rem;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+.siteName a{
+  text-decoration: none;
+}
+
+#tools {
+  margin-left: 15rem;
 }
