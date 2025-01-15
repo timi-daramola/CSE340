@@ -69,13 +69,13 @@ nav a:hover{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
   color: black;
-  margin-left: 25px;
+  margin-left: 30px;
   margin-top: -40px;
   
 }
 
 #tools {
-  margin-left: 45rem;
+  margin-left: 55rem;
 }
 
 #tools a{
@@ -110,7 +110,7 @@ nav a:hover{
   font-size: larger;
   font-weight:900;
   z-index: 1;
-  margin-left: 2.5rem;
+  margin-left: 1rem;
 }
 
 .specification p {
@@ -149,7 +149,7 @@ nav a:hover{
   background-color: rgb(41, 175, 253);
   align-content: center;
   padding: 20px;
-  margin-left: 4rem;
+  margin-left: 1rem;
   margin-bottom: -20px;
 }
 
@@ -162,10 +162,12 @@ nav a:hover{
 
 .top-images {
   display: flex;
+  margin-left: 3rem;
 }
 
 .bottom-images {
   display: flex;
+  margin-left: 3rem;
 }
 
 .top-title {
@@ -177,23 +179,27 @@ nav a:hover{
 }
 
 .first-title {
-  padding-top: 5px;
-  margin-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 75px;
 }
 
 .second-title {
-  padding-top: 5px;
-  margin-left: 90px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
 }
 
 .third-title {
-  padding-top: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   margin-left: 70px;
 }
 
 .fourt-title {
-  padding-top: 5px;
-  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
 }
 
 .third-section {
