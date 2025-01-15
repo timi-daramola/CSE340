@@ -72,3 +72,42 @@ nav a:hover{
   font-size: large;
   font-weight: bold;
 }
+
+.first-section {
+  display: flex;
+}
+
+.extra-layer {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(179, 178, 178, 0.979);
+  opacity: 0.5;
+  margin-left: 2rem;
+  position: absolute;
+}
+
+.specification {
+  display: block;
+  color: rgb(58, 171, 247);
+  font-size: larger;
+  font-weight: bolder;
+  z-index: 1;
+}
+
+.specification p {
+  display: block;
+  margin-top: -20px;
+}
+
+.own-today {
+  width: 120px;
+  height: 40px;
+}
+
+.second-section {
+  display: flex;
+}
+
+.third-section {
+  display: flex;
+}
