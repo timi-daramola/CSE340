@@ -213,8 +213,11 @@ nav a:hover{
   
 }
 
-
 .third-section li{
   padding-top: 18px;
   
+}
+
+footer p {
+  margin-left: 2rem;
 }
