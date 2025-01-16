@@ -237,9 +237,10 @@ footer p {
   body {
     width: 100%;
     height: 100%;
+    background-image: none;
     background-color: white;
     margin: auto;
-    overflow: auto;
+    overflow: scroll;
   }
 
   .body-layout {
@@ -251,7 +252,7 @@ footer p {
   h1 {
     position: absolute;
     z-index: 1;
-    margin-left: 4rem;
+    margin-left: 3rem;
     margin-top: 2rem;
   }
   
@@ -260,23 +261,22 @@ footer p {
   }
   
   nav {
-    width: 95%;
-    height: 50px;
-    margin: auto;
+    width: 85%;
+    font-size: medium;
     margin-top: -10px;
     background-color: black;
   }
-  
-  nav ul{
-    text-align: center;
-    padding-top: 16px;
+
+  nav ul {
+    margin-left: 15px;
+    padding-left: 18px;
   }
   
   nav a{
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    padding-top: 10px;
-    padding: 10px;
+    margin-left: -2px;
+    padding-left: 5px;
     color: white;
   }
   
@@ -298,13 +298,12 @@ footer p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     color: black;
-    margin-left: 30px;
+    margin-left: 35px;
     margin-top: -40px;
-    
   }
   
   #tools {
-    margin-left: 12rem;
+    margin-left: 10rem;
   }
   
   #tools a{
@@ -315,9 +314,8 @@ footer p {
   }
 
   .grouped {
-    margin-top: 6rem;
-    z-index: 1;
-    margin-left: 25px;
+    margin-top: 4rem;
+    margin-left: 5px;
   }
   
   .extra-layer {
@@ -352,7 +350,7 @@ footer p {
   .delorean {
     margin-top: 6rem;
     margin-left: -4rem;
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 
@@ -362,14 +360,53 @@ footer p {
 
   .second-section {
     display: block;
-    margin-top: 2rem;
-    margin-top: 18rem;
+    margin-top: 20rem;
   }
 
   .third-section {
     position: absolute;
-    margin-top: -30rem;
+    margin-top: -35rem;
     margin-left: 2.5rem;
+  }
+
+  .image-background {
+    width: 180px;
+    height: 90px;
+    background-color: rgb(41, 175, 253);
+    align-content: center;
+    padding: 20px;
+    margin-left: 1rem;
+    margin-bottom: -20px;
+  }
+
+  .image-background img {
+    margin-left: 50px;
+    width: 50px;
+    height: 30;
+  }
+
+  .first-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 110px;
+  }
+  
+  .second-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+  }
+  
+  .third-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+  }
+  
+  .fourt-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 110px;
   }
 
   footer p {
