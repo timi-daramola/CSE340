@@ -230,3 +230,10 @@ footer p {
   margin-left: 2rem;
   margin-top: -2px;
 }
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+}
