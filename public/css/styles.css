@@ -24,12 +24,12 @@ h1 {
 
 .body-layout {
   width: 100%;
-  height: 650px;
+  height: 625px;
   background-color: white;
   border: 5px rgb(77, 207, 240) solid;
   border-radius: 5px;
   margin: auto;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 header {
@@ -154,7 +154,7 @@ nav a:hover{
 
 .image-background {
   width: 120px;
-  height: 70px;
+  height: 60px;
   background-color: rgb(41, 175, 253);
   align-content: center;
   padding: 20px;
@@ -223,10 +223,10 @@ nav a:hover{
 }
 
 .third-section li{
-  padding-top: 18px;
-  
+  padding-top: 16px;
 }
 
 footer p {
   margin-left: 2rem;
+  margin-top: -2px;
 }
