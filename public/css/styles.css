@@ -11,6 +11,7 @@ body {
   background-size:cover;
   position: relative;
   width: 90%;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -43,11 +44,18 @@ nav {
   background-color: black;
 }
 
+nav ul{
+  text-align: center;
+  padding-top: 16px;
+  margin-right: 5rem;
+}
+
 nav a{
   text-decoration: none;
-  margin: 2rem;
+  margin-left: 7rem;
   font-weight: bold;
-  padding: 20px;
+  padding-top: 10px;
+  padding: 10px;
   color: white;
 }
 
@@ -97,10 +105,11 @@ nav a:hover{
 
 .extra-layer {
   width: 200px;
-  height: 200px;
+  height: 170px;
   background-color: rgba(218, 218, 218, 0.712);
   opacity: 0.2;
   margin-left: 2rem;
+  margin-top: 20px;
   position: absolute;
 }
 
@@ -110,7 +119,7 @@ nav a:hover{
   font-size: larger;
   font-weight:900;
   z-index: 1;
-  margin-left: 1rem;
+  margin-left: 2.5rem;
 }
 
 .specification p {
