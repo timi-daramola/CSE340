@@ -44,10 +44,13 @@ nav {
   background-color: black;
 }
 
-nav ul{
-  text-align: center;
+nav ul {
+  display: flex;
+}
+
+nav li {
   padding-top: 16px;
-  margin-right: 5rem;
+  list-style-type: none;
 }
 
 nav a{
@@ -55,6 +58,7 @@ nav a{
   margin-left: 7rem;
   font-weight: bold;
   padding-top: 10px;
+  margin-top: 10px;
   padding: 10px;
   color: white;
 }
@@ -165,7 +169,7 @@ nav a:hover{
 .image-background img {
   margin-left: 20px;
   width: 30px;
-  height: 30;
+  height: 30px;
 }
 
 
@@ -268,8 +272,13 @@ footer p {
   }
 
   nav ul {
-    margin-left: 15px;
-    padding-left: 18px;
+    display: flex;
+  }
+  
+  nav li {
+    padding-top: 16px;
+    margin-left: 10px;
+    list-style-type: none;
   }
   
   nav a{
@@ -382,7 +391,7 @@ footer p {
   .image-background img {
     margin-left: 50px;
     width: 50px;
-    height: 30;
+    height: 30px;
   }
 
   .first-title {
