@@ -36,7 +36,7 @@ const host = process.env.HOST
  *************************/
 
 app.get("/", (req, res) => {
-  res.status(200).render("./partials/index", {title: "Home Page"})
+  res.status(200).render("./index", {title: "Home Page"})
 })
 
 app.listen(port, () => {
