@@ -28,10 +28,6 @@ CREATE TABLE IF NOT EXISTS public .inventory (
 
 
 
-
-===========================
-
-
 ALTER TABLE IF EXISTS public .inventory
 	ADD CONSTRAINT fk_classification
 	FOREIGN KEY (classification_id)
@@ -64,10 +60,6 @@ VALUES ('Custom'),
 
 
 
-
-
-
-=================================
 
 -- Data for table `inventory`
 
@@ -250,3 +242,43 @@ VALUES   (
     'White',
     5
   ); 
+
+
+
+-- Insert a new record into the account table for Tony Stark
+INSERT INTO account (account_firstname, account_lastname, account_email, account_password)
+VALUES ('Tony', 'Stark', 'tony@starkent.com', 'Iam1ronM@n');
+
+
+-- Update the Tony Stark record to set account_type to 'Admin'
+UPDATE account
+SET account_type = 'Admin'
+WHERE account_email = 'tony@starkent.com';
+
+
+-- Delete Tony Stark's account based on email
+DELETE FROM account
+WHERE account_email = 'tony@starkent.com';
+
+
+-- Update the description for "GM Hummer" by replacing "small interiors" with "a huge interior"
+UPDATE inventory
+SET inv_description = REPLACE(inv_description, 'small interiors', 'a huge interior')
+WHERE inv_make = 'GM' AND inv_model = 'Hummer';
+
+
+-- Select the make and model from the inventory table and classification name from the classification table
+-- where the classification is 'Sport'
+SELECT inv_make, inv_model, c.classification_name
+FROM inventory i
+INNER JOIN classification c
+  ON i.classification_id = c.classification_id
+WHERE c.classification_name = 'Sport';
+
+
+
+-- Update inv_image and inv_thumbnail to add '/vehicles' in the middle of the file path
+UPDATE inventory
+SET 
+    inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
+    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
