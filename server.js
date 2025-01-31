@@ -10,6 +10,7 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const inventoryRoute = require("./routes/inventoryRoute")
 
 
 /* ***********************
@@ -23,6 +24,8 @@ app.set("layout", "./layouts/layout")
  * Routes
  *************************/
 app.use(static)
+// Inventory routes
+app.use("/inv", inventoryRoute)
 
 /* ***********************
  * Local Server Information
