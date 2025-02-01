@@ -11,6 +11,7 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
+const baseController = require("./controllers/baseController")
 
 
 /* ***********************
@@ -38,9 +39,10 @@ const host = process.env.HOST
  * Log statement to confirm server operation
  *************************/
 
-app.get("/", (req, res) => {
-  res.status(200).render("./index", {title: "Home Page"})
-})
+// app.get("/", (req, res) => {
+//   res.status(200).render("./index", {title: "Home Page"})
+// })
+app.get("/", baseController.buildHome);
 
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
