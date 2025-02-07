@@ -14,6 +14,7 @@ const inventoryRoute = require("./routes/inventoryRoute")
 const baseController = require("./controllers/baseController")
 const session = require("express-session")
 const pool = require('./database/')
+const accountRoute = require("./routes/accountRoute")
 
 
 /* ***********************
@@ -40,6 +41,13 @@ app.use(session({
 }))
 
 
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
+
 
 /* ***********************
  * Routes
@@ -47,6 +55,9 @@ app.use(session({
 app.use(static)
 // Inventory routes
 app.use("/inv", inventoryRoute)
+// Account routes
+app.use("/account", require("./routes/accountRoute"))
+
 
 /* ***********************
  * Local Server Information

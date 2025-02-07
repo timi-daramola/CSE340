@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+<body>
+    <div class="body-layout">
+        <%- include('../partials/header') %>
+        <%- include('../partials/navigation') %>
+
+        <main>
+            <form action="" method="post">
+                <input type="email" name="account_email">
+                <label for="account_email">Email:</label>
+                <input type="password" name="account_password">
+                <label for="account_password">Email:</label>
+                <input class="login-btn" type="submit" name="LOGIN">
+                <span>No account? <a href="">Sign-up</a></span>
+            </form>
+        </main>
+                
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+</html>

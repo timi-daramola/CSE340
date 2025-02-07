@@ -241,6 +241,10 @@ footer p {
   background-color: yellowgreen;
 }
 
+form {
+  background-color: rgba(10, 42, 71, 0.973);
+}
+
 
 @media only screen and (max-width: 600px) {
  
