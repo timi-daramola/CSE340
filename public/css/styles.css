@@ -242,10 +242,11 @@ footer p {
 }
 
 
-.form-login {
+.login-container {
   background-color: lightblue;
+  margin-top: -20px;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .form-login form {
@@ -254,6 +255,12 @@ footer p {
   color: white;
   width: 500px;
   height: 400px;
+  margin-left: 50PX;
+  margin-top: 20px;
+}
+
+.login-wrapper{
+  margin-top: 20px;
 }
 
 .form-login input {

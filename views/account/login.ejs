@@ -3,16 +3,20 @@
 <link rel="stylesheet" href="/css/styles.css">
 <body>
     <div class="body-layout">
-        <main class="form-login">
-            <form action="" method="post">
-                <input type="email" name="account_email" required>
-                <label for="account_email">Email:</label>
-                <input type="password" name="account_password" required>
-                <label for="account_password">Email:</label>
-                <input class="login-btn" type="submit" name="LOGIN">
-                <span>No account? <a href="/account/register">Sign-up</a></span>
-            </form>
-        </main>
+        <div class="login-container">
+            <main class="form-login">
+                <form action="" method="post">
+                    <div class="login-wrapper">
+                        <input type="email" name="account_email" required>
+                        <label for="account_email">Email:</label>
+                        <input type="password" name="account_password" required>
+                        <label for="account_password">Email:</label>
+                        <input class="login-btn" type="submit" name="LOGIN">
+                    </div>
+                    <span>No account? <a href="/account/register">Sign-up</a></span>
+                </form>
+            </main>
+        </div>
     </div>
 </body>
 </html>
