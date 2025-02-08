@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="/css/styles.css">
-<body>
-    <div class="body-layout">
+<body class="account-body">
+    <div>
+        <div class="register-container">
         <main class="form-register">
             <form action="" method="post">
-                <input type="text" name="account_firstname">
-                <label for="account_firstname">First name:</label>
-                <input type="text" name="account_lasttname">
-                <label for="account_lasttname">Last name:</label>
-                <input type="email" name="account_email">
-                <label for="account_email">Email:</label>
-                <input type="password" name="account_password">
-                <label for="account_password">Email:</label>
-                <input class="login-btn" type="submit" name="LOGIN">
-                <span>No account? <a href="/account/login">Sign-up</a></span>
+                <div class="login-wrapper">
+                    <label for="account_firstname">First name</label>
+                    <input type="text" name="account_firstname">
+                    <label for="account_lasttname">Last name</label>
+                    <input type="text" name="account_lasttname">
+                    <label for="account_email">Email</label>
+                    <input type="email" name="account_email">
+                    <label for="account_password">Password</label>
+                    <input type="password" name="account_password">
+                </div>
+                <button class="register-btn">Register</button>
             </form>
         </main>
+        </div>
     </div>
 </body>
 </html>

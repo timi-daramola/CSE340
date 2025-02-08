@@ -241,6 +241,10 @@ main {
   box-sizing: border-box;
 }
 
+.account-body {
+  background-color: lightblue;
+}
+
 #inv-display {
   display: flex;
   width: 200px;
@@ -253,14 +257,6 @@ main {
   list-style: none;
 }
 
-
-.login-container {
-  background-color: lightblue;
-  margin-top: -40px;
-  width: 100%;
-  height: auto
-}
-
 .form-login form {
   display: block;
   background-color: rgba(21, 108, 221, 0.856);
@@ -270,6 +266,29 @@ main {
   margin-left: 50PX;
   margin-top: 20px;
 }
+
+.login-container {
+  width: 75.8rem;
+  height: 28rem;
+  background-color: lightblue;
+}
+
+.register-container {
+  width: 75.8rem;
+  height: 30.5rem;
+  background-color: lightblue;
+}
+
+.form-register form {
+  display: block;
+  background-color: white;
+  color: black;
+  width: 500px;
+  height: 380px;
+  margin-left: 50PX;
+  border: 2px solid lightblue;
+}
+
 
 .login-wrapper{
   margin-left: 30px;
@@ -283,6 +302,8 @@ main {
   display: block;
   color: white;
   font-size: larger;
+  padding-top: 20px;
+  margin-left: 10rem;
 }
 
 .login-btn {
@@ -292,7 +313,29 @@ main {
   border-radius: 5px;
   padding-top: 10px;
   margin-top: 20px;
+  margin-left: 12rem;
+  color: black;
+  border: transparent;
+  cursor: pointer;
+}
+
+.register-btn {
+  display: block;
+  width: 100px;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding-top: 10px;
+  margin-top: 20px;
   margin-left: 30px;
+  color: white;
+  background-color: rgb(17, 94, 209);
+  border: transparent;
+}
+
+.sign-up {
+  color: white;
+  text-decoration: none;
 }
 
 .form-login input {
@@ -302,11 +345,13 @@ main {
   height: 50px;
 }
 
-.form-register {
-  background-color: yellow;
+.form-register input {
+  display: block;
+  padding-bottom: 10px;
   width: 400px;
-  height: 300px;
+  height: 30px;
 }
+
 
 @media only screen and (max-width: 600px) {
  

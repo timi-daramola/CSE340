@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="/css/styles.css">
-<body>
-    <div class="body-layout">
+<body class="account-body">
+    <div>
         <div class="login-container">
             <main class="form-login">
                 <form action="" method="post">
@@ -12,9 +12,9 @@
                         <label for="account_password">Password:</label>
                         <input type="password" name="account_password" required>
                     </div>
-                    <button class="login-btn" type="submit" name="LOGIN"></button>
+                    <button class="login-btn" name="LOGIN">LOGIN</button>
+                    <span class="unregistered">No account? <a class="sign-up" href="/account/register">Sign-up</a></span>
                 </form>
-                <span class="unregistered">No account? <a href="/account/register">Sign-up</a></span>
             </main>
         </div>
     </div>
