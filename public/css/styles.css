@@ -236,9 +236,21 @@ footer p {
 }
 
 
+main {
+  max-width: fit-content;
+  box-sizing: border-box;
+}
+
 #inv-display {
   display: flex;
-  background-color: yellowgreen;
+  width: 200px;
+  height: auto;
+  padding: 30px;
+}
+
+#inv-display li {
+  padding: 30px;
+  list-style: none;
 }
 
 
@@ -254,7 +266,7 @@ footer p {
   background-color: rgba(21, 108, 221, 0.856);
   color: white;
   width: 500px;
-  height: 400px;
+  height: 300px;
   margin-left: 50PX;
   margin-top: 20px;
 }
