@@ -7,14 +7,14 @@
             <main class="form-login">
                 <form action="" method="post">
                     <div class="login-wrapper">
-                        <input type="email" name="account_email" required>
                         <label for="account_email">Email:</label>
+                        <input type="email" name="account_email" required>
+                        <label for="account_password">Password:</label>
                         <input type="password" name="account_password" required>
-                        <label for="account_password">Email:</label>
-                        <input class="login-btn" type="submit" name="LOGIN">
                     </div>
-                    <span>No account? <a href="/account/register">Sign-up</a></span>
                 </form>
+                <button class="login-btn" type="submit" name="LOGIN">
+                <span class="unregistered">No account? <a href="/account/register">Sign-up</a></span>
             </main>
         </div>
     </div>
