@@ -364,6 +364,20 @@ main {
     overflow: scroll;
   }
 
+  #inv-display {
+    display: block;
+    width: 200px;
+    height: auto;
+    padding: 30px;
+    margin-top: 30px;
+    margin-left: 5rem;
+  }
+  
+  #inv-display li {
+    padding: 30px;
+    list-style: none;
+  }
+
   .body-layout {
     width: 100%;
     height: 100%;
