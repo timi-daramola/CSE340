@@ -56,6 +56,7 @@ app.use(static)
 app.use("/inv", inventoryRoute)
 // Account routes
 app.use("/account", require("./routes/accountRoute"))
+app.use("/css", express.static(__dirname + "public/css"));
 
 
 /* ***********************
