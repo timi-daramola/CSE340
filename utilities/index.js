@@ -24,8 +24,6 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-module.exports = Util
-
 
 /* **************************************
 * Build the classification view HTML
@@ -61,9 +59,51 @@ Util.buildClassificationGrid = async function(data){
   }
 
 
-  /* ****************************************
+  /* **************************************
+* Build the Vehicle Details view HTML
+* ************************************ */
+Util.vehicleDetailsToHtml = async function (vehicle){
+  return `
+      <div class="vehicle-details">
+          <img src="${vehicle.image_url}" alt="${vehicle.make} ${vehicle.model}" class="vehicle-image">
+          <div class="vehicle-info">
+              <h2>${vehicle.make} ${vehicle.model}</h2>
+              <p><strong>Year:</strong> ${vehicle.year}</p>
+              <p><strong>Price:</strong> $${vehicle.price.toLocaleString()}</p>
+              <p><strong>Mileage:</strong> ${vehicle.mileage.toLocaleString()} miles</p>
+              <p><strong>Description:</strong> ${vehicle.description}</p>
+          </div>
+      </div>
+  `;
+};
+
+/* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+
+
+Util.buildClassificationList = async function (classification_id = null) {
+  let data = await invModel.getClassifications()
+  let classificationList =
+    '<select name="classification_id" id="classificationList" required>'
+  classificationList += "<option value=''>Choose a Classification</option>"
+  data.rows.forEach((row) => {
+    classificationList += '<option value="' + row.classification_id + '"'
+    if (
+      classification_id != null &&
+      row.classification_id == classification_id
+    ) {
+      classificationList += " selected "
+    }
+    classificationList += ">" + row.classification_name + "</option>"
+  })
+  classificationList += "</select>"
+  return classificationList
+}
+
+
+module.exports = Util
