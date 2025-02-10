@@ -1,11 +1,26 @@
-<link rel="stylesheet" href="/css/styles.css">
-<%- include('../partials/head') %>
-<% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-      res.redirect('/')
-} %>
+<!-- views/inventory/management.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <h1>Inventory Management</h1>
+    </header>
 
-<%# messages() %>
+    <main>
+        <% if (flashMessage.length > 0) { %>
+            <p class="flash-message"><%= flashMessage[0] %></p>
+        <% } %>
 
-<%- classificationList %>
+        <ul>
+            <li><a href="/inv/add-classification">Add New Classification</a></li>
+            <li><a href="/inv/add-item">Add New Inventory Item</a></li>
+        </ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- views/inventory/add-classification.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <h1>Add New Classification</h1>
+    </header>
+
+    <main>
+        <% if (flashMessage.length > 0) { %>
+            <p class="flash-message"><%= flashMessage[0] %></p>
+        <% } %>
+
+        <form action="/inv/add-classification" method="POST">
+            <label for="classification_name">Classification Name:</label>
+            <input type="text" name="classification_name" id="classification_name" required>
+            <button type="submit">Add Classification</button>
+        </form>
+    </main>
+</body>
+</html>

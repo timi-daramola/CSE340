@@ -39,4 +39,73 @@ invCont.showVehicleDetail = async function (req, res, next) {
     }
 };
 
+
+invCont.managementView = async function (req, res) {
+  const flashMessage = req.flash('message'); // Retrieve the flash message
+  res.render('inventory/management', {
+      title: 'Inventory Management',
+      flashMessage: flashMessage
+  });
+};
+
+
+invCont.addClassificationView = async function (req, res) {
+    res.render('inventory/add-classification', {
+        title: 'Add New Classification',
+        flashMessage: req.flash('message')
+    });
+};
+
+invCont.addClassification = async function (req, res) {
+    const { classification_name } = req.body;
+
+    // Server-side validation
+    if (!classification_name || /[^a-zA-Z0-9]/.test(classification_name)) {
+        req.flash('message', 'Invalid classification name. No spaces or special characters allowed.');
+        return res.redirect('/inv/add-classification');
+    }
+
+    try {
+        await invModel.addClassification(classification_name);
+        req.flash('message', 'Classification added successfully!');
+        res.redirect('/inv');
+    } catch (err) {
+        req.flash('message', 'Failed to add classification. Please try again.');
+        res.redirect('/inv/add-classification');
+    }
+};
+
+
+invCont.addItemView = async function (req, res) {
+    const classificationList = await utilities.buildClassificationList(); // Fetch classifications for dropdown
+    res.render('inventory/add-item', {
+        title: 'Add New Inventory Item',
+        classificationList: classificationList,
+        flashMessage: req.flash('message'),
+        stickyData: req.session.stickyData || {} // Store sticky data in session
+    });
+};
+
+invCont.addItem = async function (req, res) {
+    const { inv_make, inv_model, inv_year, inv_price, inv_mileage, inv_description, classification_id } = req.body;
+
+    // Server-side validation
+    if (!inv_make || !inv_model || !inv_year || !inv_price || !inv_mileage || !inv_description || !classification_id) {
+        req.flash('message', 'All fields are required.');
+        req.session.stickyData = req.body; // Save data for sticky form
+        return res.redirect('/inv/add-item');
+    }
+
+    try {
+        await invModel.addItem({ inv_make, inv_model, inv_year, inv_price, inv_mileage, inv_description, classification_id });
+        req.flash('message', 'Inventory item added successfully!');
+        delete req.session.stickyData; // Clear sticky data after successful submission
+        res.redirect('/inv');
+    } catch (err) {
+        req.flash('message', 'Failed to add inventory item. Please try again.');
+        req.session.stickyData = req.body; // Save data for sticky form
+        res.redirect('/inv/add-item');
+    }
+};
+
 module.exports = invCont

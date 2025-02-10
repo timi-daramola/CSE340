@@ -32,4 +32,16 @@ async function getInventoryByClassificationId(classification_id) {
     return vehicle.rows // Returns a single vehicle object
 };
 
-module.exports = {getClassifications, getInventoryByClassificationId, getVehicleById};
+
+async function addClassification (classification_name) {
+    const query = 'INSERT INTO classifications (classification_name) VALUES (?)';
+    await pool.query(query, [classification_name]);
+};
+
+
+async function addItem ({ inv_make, inv_model, inv_year, inv_price, inv_mileage, inv_description, classification_id }) {
+  const query = 'INSERT INTO inventory (make, model, year, price, mileage, description, classification_id) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  await pool.query(query, [inv_make, inv_model, inv_year, inv_price, inv_mileage, inv_description, classification_id]);
+};
+
+module.exports = {getClassifications, getInventoryByClassificationId, getVehicleById, addClassification, addItem};
