@@ -27,8 +27,6 @@ async function buildRegister(req, res, next) {
     })
   }
   
-  module.exports = { buildLogin, buildRegister }
-
 
   /* ****************************************
  *  Process login request
@@ -71,3 +69,5 @@ async function accountLogin(req, res) {
     throw new Error('Access Forbidden')
   }
 }
+
+module.exports = { buildLogin, buildRegister, accountLogin }
