@@ -15,6 +15,7 @@ const baseController = require("./controllers/baseController")
 const session = require("express-session")
 const pool = require('./database/')
 const utilities = require("./utilities/")
+const cookieParser = require("cookie-parser")
 
 
 /* ***********************
@@ -39,6 +40,8 @@ app.use(session({
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
+app.use(cookieParser())
 
 
 // Express Messages Middleware
