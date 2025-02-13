@@ -31,7 +31,7 @@ async function buildRegister(req, res, next) {
   /* ****************************************
  *  Process login request
  * ************************************ */
-async function accountLogin(req, res) {
+async function buildManagement(req, res) {
   let nav = await utilities.getNav()
   const { account_email, account_password } = req.body
   const accountData = await accountModel.getAccountByEmail(account_email)
@@ -70,4 +70,4 @@ async function accountLogin(req, res) {
   }
 }
 
-module.exports = { buildLogin, buildRegister, accountLogin }
+module.exports = { buildLogin, buildRegister, buildManagement}

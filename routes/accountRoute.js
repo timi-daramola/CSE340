@@ -8,27 +8,16 @@ const utilities = require("../utilities")
 
 accountController.accountLogin
 // Process the login request
-router.post(
-    "/login",
-    regValidate.loginRules(),
-    regValidate.checkLoginData,
-    utilities.handleErrors(accountController.accountLogin)
-  )
+// router.post(
+//     "/login",
+//     regValidate.loginRules(),
+//     regValidate.checkLoginData,
+//     utilities.handleErrors(accountController.accountLogin)
+//   )
 
 router.get("/register", accountController.buildRegister)
 router.get("/login", accountController.buildLogin)
-router.get("/", accountController.accountLogin)
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
 
-
-accountController.accountLogin
-// Process the login request
-router.post(
-    "/",
-    regValidate.loginRules(),
-    regValidate.checkLoginData,
-    utilities.handleErrors(accountController.accountLogin)
-  )
-
-router.get("/register", accountController.buildRegister)
 
 module.exports = router;
