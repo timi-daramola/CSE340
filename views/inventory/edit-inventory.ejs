@@ -17,7 +17,7 @@
             <p class="flash-message"><%= flashMessage[0] %></p>
         <% } %>
 
-        <form action="/inv/add-item" method="POST">
+        <form id="updateForm" action="/inv/update" method="post">
             <label for="make">Make:</label>
             <input type="text" name="make" id="make" value="<%= stickyData.inv_make %>" required>
 
@@ -39,8 +39,12 @@
             <label for="classification_id">Classification:</label>
             <%= classificationList %>
 
-            <button type="submit">Add Inventory Item</button>
+            <button type="submit" disabled>Update Vehicle</button>
+            <input type="hidden" name="inv_id"
+            <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+            <% } %>>
         </form>
     </main>
 </body>
 </html>
+<script src="js/inv-update.js"></script>

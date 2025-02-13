@@ -1,0 +1,49 @@
+<!-- views/inventory/add-item.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <h1>Add New Inventory Item</h1>
+    </header>
+
+    <main>
+        <% if (flashMessage.length > 0) { %>
+            <p class="flash-message"><%= flashMessage[0] %></p>
+        <% } %>
+
+        <form id="updateForm" action="/inv/update" method="post">
+            <label for="make">Make:</label>
+            <input type="text" name="make" id="make" value="<%= stickyData.inv_make %>" required>
+
+            <label for="model">Model:</label>
+            <input type="text" name="model" id="model" value="<%= stickyData.inv_model %>" required>
+
+            <label for="year">Year:</label>
+            <input type="number" name="year" id="year" value="<%= stickyData.inv_year %>" required>
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" value="<%= stickyData.inv_price %>" required>
+
+            <label for="mileage">Mileage:</label>
+            <input type="number" name="mileage" id="mileage" value="<%= stickyData.inv_mileage %>" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" required><%= stickyData.inv_description %></textarea>
+
+            <label for="classification_id">Classification:</label>
+            <%= classificationList %>
+
+            <button type="submit">Update Vehicle</button>
+            <input type="hidden" name="inv_id"
+            <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+            <% } %>>
+        </form>
+    </main>
+</body>
+</html>

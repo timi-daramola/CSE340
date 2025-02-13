@@ -45,4 +45,6 @@ invCont.getInventoryJSON = async (req, res, next) => {
     }
   }
 
+  router.post("/update/", invController.updateInventory)
+
 module.exports = router;
