@@ -64,13 +64,13 @@ invCont.managementView = async function (req, res) {
 invCont.buildManagementView = async function (req, res, next){
     let nav = await utilities.getNav()
     const classificationSelect = await utilities.buildClassificationList()
-    res.render("./inventory/management", {
+    res.render("./inv/management", {
         title: 'Inventory Management',
         flashMessage: flashMessage});
 };
 
 invCont.addClassificationView = async function (req, res) {
-    res.render('inventory/add-classification', {
+    res.render('inv/add-classification', {
         title: 'Add New Classification',
         flashMessage: req.flash('message')
     });
@@ -98,7 +98,7 @@ invCont.addClassification = async function (req, res) {
 
 invCont.addItemView = async function (req, res) {
     const classificationList = await utilities.buildClassificationList(); // Fetch classifications for dropdown
-    res.render('inventory/add-item', {
+    res.render('inv/add-item', {
         title: 'Add New Inventory Item',
         classificationList: classificationList,
         flashMessage: req.flash('message'),
@@ -138,7 +138,7 @@ invCont.editInventoryView = async function (req, res, next) {
     const itemData = await invModel.getInventoryById(inv_id)
     const classificationSelect = await utilities.buildClassificationList(itemData.classification_id)
     const itemName = `${itemData.inv_make} ${itemData.inv_model}`
-    res.render("./inventory/edit-inventory", {
+    res.render("./inv/edit-inventory", {
       title: "Edit " + itemName,
       nav,
       classificationSelect: classificationSelect,

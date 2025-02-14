@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+</head>
+<body>
+    <h1>Inventory Management</h1>
+    
+    <!-- Display Flash Message -->
+    <% if (flashMessage) { %>
+        <p class="flash-message"><%= flashMessage %></p>
+    <% } %>
+
+    <h2>Manage Classifications</h2>
+    <a href="/inv/add-classification">Add New Classification</a>
+    
+    <h2>Manage Inventory</h2>
+    <a href="/inv/add-inventory">Add New Inventory Item</a>
+
+</body>
+</html>

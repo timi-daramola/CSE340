@@ -17,7 +17,6 @@ const pool = require('./database/')
 const utilities = require("./utilities/")
 const cookieParser = require("cookie-parser")
 
-
 /* ***********************
  * View Engine and Templates
  *************************/
