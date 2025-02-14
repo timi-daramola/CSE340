@@ -1,0 +1,13 @@
+<h2>Reviews</h2>
+<p>Average Rating: <%= averageRating.toFixed(1) %> / 5</p>
+
+<div class="reviews">
+  <% reviews.forEach(review => { %>
+    <div class="review">
+      <h3><%= review.account_firstname %> <%= review.account_lastname %></h3>
+      <p>Rating: <%= review.rating %> / 5</p>
+      <p><%= review.review_text %></p>
+      <p><%= review.review_date %></p>
+    </div>
+  <% }) %>
+</div>

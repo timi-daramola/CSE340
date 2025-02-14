@@ -1,0 +1,17 @@
+<h2>Submit a Review</h2>
+<form action="/reviews" method="POST">
+  <label for="inv_id">Vehicle:</label>
+  <select name="inv_id" required>
+    <option value="1">Chevy Camaro</option>
+    <option value="2">Batmobile</option>
+    <!-- List all cars dynamically here -->
+  </select>
+  
+  <label for="rating">Rating (1 to 5):</label>
+  <input type="number" name="rating" min="1" max="5" required>
+
+  <label for="review_text">Review:</label>
+  <textarea name="review_text" rows="4" required></textarea>
+
+  <button type="submit">Submit Review</button>
+</form>
