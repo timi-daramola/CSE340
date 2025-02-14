@@ -8,7 +8,9 @@ const invCont = {}
 // Route to build inventory by classification view
 router.get("/type/:classificationId", invController.buildByClassificationId);
 
-router.get('/type/:detail', invController.showVehicleDetail);
+// Route to build the vehicle details view
+router.get("/detail/:inv_id", invController.vehicleDetailView);
+
 
 router.get('/error-test', (req, res, next) => {
     const error = new Error("Intentional Error");

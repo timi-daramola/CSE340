@@ -46,6 +46,25 @@ async function addItem ({ inv_make, inv_model, inv_year, inv_price, inv_mileage,
 
 
 /* ***************************
+ *  Get inventory item by ID
+ * ************************** */
+async function getInventoryById(inv_id) {
+  try {
+    const data = await pool.query(
+      `SELECT * FROM public.inventory AS i 
+      JOIN public.classification AS c 
+      ON i.classification_id = c.classification_id 
+      WHERE i.inv_id = $1`, 
+      [inv_id]
+    );
+    return data.rows[0];  // Return the first row (single vehicle)
+  } catch (error) {
+    console.error("getInventoryById error " + error);
+  }
+}
+
+
+/* ***************************
  *  Update Inventory Data
  * ************************** */
 async function updateInventory(
@@ -82,4 +101,6 @@ async function updateInventory(
     console.error("model error: " + error)
   }
 }
-module.exports = {getClassifications, getInventoryByClassificationId, getVehicleById, addClassification, addItem, updateInventory};
+module.exports = {getClassifications, getInventoryByClassificationId, getVehicleById, addClassification, addItem, updateInventory, getClassifications,
+  getInventoryByClassificationId,
+  getInventoryById};

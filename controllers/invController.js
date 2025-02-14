@@ -19,25 +19,37 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
-invCont.showVehicleDetail = async function (req, res, next) {
-    try {
-        const vehicleId = req.params.classificationId;
-        const vehicle = await invModel.getVehicleById(vehicleId);
-        const vehicleHtml = await utilities.vehicleDetailsToHtml(vehicle)
-        let nav = await utilities.getNav()
-        if (!vehicle) {
-            return res.status(404).send("Vehicle not found");
-        }
-        res.render(".inventory/detail", {
-            title: `${vehicle.make} ${vehicle.model}`,
-            nav,
-            vehicleHtml: vehicleHtml,
-            vehicle: vehicle
-        });
-    } catch (err) {
-        next(err);
+
+/* ***************************
+ *  Build vehicle details view
+ * ************************** */
+invCont.vehicleDetailView = async function (req, res, next) {
+    const inv_id = parseInt(req.params.inv_id);  // Extract the vehicle ID from the URL
+    let nav = await utilities.getNav();  // Get the navigation
+    const itemData = await invModel.getInventoryById(inv_id);  // Fetch the vehicle data by ID
+  
+    if (!itemData) {
+      return res.status(404).send("Vehicle not found");
     }
-};
+  
+    const itemName = `${itemData.inv_make} ${itemData.inv_model}`;  // Vehicle name
+    res.render("./inventory/vehicle-detail", {
+      title: itemName,  // Set the title to vehicle name
+      nav,  // Navigation
+      inv_id: itemData.inv_id,
+      inv_make: itemData.inv_make,
+      inv_model: itemData.inv_model,
+      inv_year: itemData.inv_year,
+      inv_description: itemData.inv_description,
+      inv_image: itemData.inv_image,
+      inv_thumbnail: itemData.inv_thumbnail,
+      inv_price: itemData.inv_price,
+      inv_miles: itemData.inv_miles,
+      inv_color: itemData.inv_color,
+      classification_id: itemData.classification_id
+    });
+  };
+  
 
 
 invCont.managementView = async function (req, res) {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inventory">Inventory</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="vehicle-details">
+            <h1><%= inv_make %> <%= inv_model %> Details</h1>
+            <div class="vehicle-info">
+                <img src="<%= inv_image %>" alt="<%= inv_make %> <%= inv_model %>">
+                <div class="details">
+                    <p><strong>Year:</strong> <%= inv_year %></p>
+                    <p><strong>Description:</strong> <%= inv_description %></p>
+                    <p><strong>Price:</strong> $<%= new Intl.NumberFormat('en-US').format(inv_price) %></p>
+                    <p><strong>Miles:</strong> <%= inv_miles %></p>
+                    <p><strong>Color:</strong> <%= inv_color %></p>
+                </div>
+            </div>
+            <a href="/inventory/type/<%= classification_id %>" class="back-link">Back to Classification</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSE Motors. All rights reserved.</p>
+    </footer>
+</body>
+</html>
