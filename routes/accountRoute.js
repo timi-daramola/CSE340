@@ -4,11 +4,9 @@ const router = new express.Router()
 const accountController = require("../controllers/accountController")
 const utilities = require("../utilities")
 
+
 // Process the login request
-// router.post(
-//     "/login",
-//     regValidate.loginRules(),
-//     regValidate.checkLoginData,
+// router.post("/login", regValidate.loginRules(), regValidate.checkLoginData,
 //     utilities.handleErrors(accountController.accountLogin)
 //   )
 

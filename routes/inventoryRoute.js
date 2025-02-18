@@ -19,7 +19,7 @@ router.get('/error-test', (req, res, next) => {
 });
 
 // Management view route
-router.get('/', invController.managementView);
+router.get('/inventory', invController.managementView);
 
 // routes/inventory-router.js
 

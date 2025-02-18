@@ -53,7 +53,7 @@ invCont.vehicleDetailView = async function (req, res, next) {
 
 invCont.managementView = async function (req, res) {
   const flashMessage = req.flash('message'); // Retrieve the flash message
-  res.render('inventory/management', {
+  res.render('inventory/inventoryManagement', {
       title: 'Inventory Management',
       flashMessage: flashMessage
   });
@@ -63,7 +63,7 @@ invCont.managementView = async function (req, res) {
 invCont.buildManagementView = async function (req, res, next){
     let nav = await utilities.getNav()
     const classificationSelect = await utilities.buildClassificationList()
-    res.render("./inv/management", {
+    res.render("./inv/inventoryManagement", {
         title: 'Inventory Management',
         flashMessage: flashMessage});
 };

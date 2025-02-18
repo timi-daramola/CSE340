@@ -1,4 +1,19 @@
 const reviewModel = require('../models/review');
+const utilities = require("../utilities/")
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
+
+
+/* ****************************************
+*  Deliver Review view
+* *************************************** */
+async function addReview(req, res, next) {
+    let nav = await utilities.getNav()
+    res.render("inventory/addReview", {
+      title: "Reviews",
+      nav,
+    })
+  }
 
 // Controller to create a review
 const createReview = async (req, res) => {
@@ -36,4 +51,4 @@ const getReviewsForCar = async (req, res) => {
     }
 };
 
-module.exports = { createReview, getReviewsForCar };
+module.exports = { createReview, getReviewsForCar, addReview };
