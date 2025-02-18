@@ -16,6 +16,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const utilities = require("./utilities/")
 const cookieParser = require("cookie-parser")
+const bodyParser = require("body-parser")
 
 /* ***********************
  * View Engine and Templates
@@ -23,8 +24,6 @@ const cookieParser = require("cookie-parser")
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
-
-
 
 /* ***********************
  * Middleware
@@ -49,6 +48,10 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 
 /* ***********************
  * Routes
@@ -87,7 +90,6 @@ app.get("/", baseController.buildHome);
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
-
 
 /* ***********************
 * Express Error Handler

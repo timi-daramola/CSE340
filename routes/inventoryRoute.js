@@ -19,19 +19,19 @@ router.get('/error-test', (req, res, next) => {
 });
 
 // Management view route
-router.get('/inv', invController.managementView);
+router.get('/', invController.managementView);
 
 // routes/inventory-router.js
 
-router.get('/inv/add-classification', invController.addClassificationView);
-router.post('/inv/add-classification', invController.addClassification);
+router.get('/add-classification', invController.addClassificationView);
+router.post('/add-classification', invController.addClassification);
 
 // routes/inventory-router.js
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
 
-router.get('/inv/add-item', invController.addItemView);
-router.post('/inv/add-item', invController.addItem);
+router.get('/add-item', invController.addItemView);
+router.post('/add-item', invController.addItem);
 
 
 /* ***************************

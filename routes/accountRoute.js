@@ -4,10 +4,6 @@ const router = new express.Router()
 const accountController = require("../controllers/accountController")
 const utilities = require("../utilities")
 
-
-// Route to build login view
-
-accountController.accountLogin
 // Process the login request
 // router.post(
 //     "/login",
@@ -15,6 +11,8 @@ accountController.accountLogin
 //     regValidate.checkLoginData,
 //     utilities.handleErrors(accountController.accountLogin)
 //   )
+
+router.post('/register', utilities.handleErrors(accountController.registerAccount))
 
 router.get("/register", accountController.buildRegister)
 router.get("/login", accountController.buildLogin)

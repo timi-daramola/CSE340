@@ -33,7 +33,7 @@ invCont.vehicleDetailView = async function (req, res, next) {
     }
   
     const itemName = `${itemData.inv_make} ${itemData.inv_model}`;  // Vehicle name
-    res.render("./inventory/vehicle-detail", {
+    res.render("./inventory/vehicle-details", {
       title: itemName,  // Set the title to vehicle name
       nav,  // Navigation
       inv_id: itemData.inv_id,
@@ -50,7 +50,6 @@ invCont.vehicleDetailView = async function (req, res, next) {
     });
   };
   
-
 
 invCont.managementView = async function (req, res) {
   const flashMessage = req.flash('message'); // Retrieve the flash message
