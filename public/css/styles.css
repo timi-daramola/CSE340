@@ -181,8 +181,13 @@ nav a:hover{
   display: flex;
   margin-left: 2rem;
   margin-top: 20px;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   padding-top: 3rem;
+}
+
+.vehicle-info img {
+  width: 400px;
+  height: auto;
 }
 
 .details {
@@ -204,7 +209,6 @@ nav a:hover{
 .back-link {
   margin-left: 30px;
   margin-bottom: 30px;
-  padding-bottom: 20px;
   text-decoration: none;
   cursor: pointer;
 }
