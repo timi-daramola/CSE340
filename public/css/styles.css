@@ -172,16 +172,17 @@ nav a:hover{
   height: 30px;
 }
 
+.vehicle-title {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
 .vehicle-info {
   display: flex;
   margin-left: 2rem;
   margin-top: 20px;
-  margin-bottom: 6rem;
-}
-
-.vehicle-head {
-  margin-left: 32rem;
-  margin-bottom: 20px;
+  margin-bottom: 5rem;
+  padding-top: 3rem;
 }
 
 .details {
@@ -535,6 +536,47 @@ main {
     width: 100%;
     height: 100%;
     border: none;
+  }
+
+  .vehicle-title {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .vehicle-info {
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 20px;
+    margin-bottom: 5rem;
+    padding-top: 3rem;
+  }
+  
+  .details {
+    margin-left: 11px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  
+  .price {
+    background-color: #c3c3c3c3;
+    padding: 10px;
+  }
+  
+  .color {
+    background-color: #c3c3c3c3;
+    padding: 10px;
+  }
+  
+  .back-link {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .copyright {
+    margin-top: 30px;
   }
 
   h1 {
