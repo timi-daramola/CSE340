@@ -59,6 +59,8 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 app.use(static)
 // Inventory routes
 app.use("/inv", inventoryRoute);
+app.use("/inventory", require("./routes/reviewRoutes"));
+
 // Account routes
 app.use("/account", require("./routes/accountRoute"));
 app.use("/css", express.static(__dirname + "public/css"));

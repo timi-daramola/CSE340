@@ -2,6 +2,7 @@
 const express = require("express")
 const router = new express.Router() 
 const invController = require("../controllers/invController")
+const reviewController = require("../controllers/reviewController")
 const utilities = require("../utilities/")
 const invCont = {}
 
@@ -20,6 +21,7 @@ router.get('/error-test', (req, res, next) => {
 
 // Management view route
 router.get('/inventory', invController.managementView);
+router.get('/inventory', reviewController.addReview);
 
 // routes/inventory-router.js
 

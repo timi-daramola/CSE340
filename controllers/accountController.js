@@ -31,6 +31,14 @@ async function buildRegister(req, res, next) {
   }
 
 
+  async function addReview(req, res, next) {
+      let nav = await utilities.getNav()
+      res.render("inventory/addReview", {
+        title: "Reviews",
+        nav,
+      })
+    }
+
 /* ****************************************
 *  Deliver Management view
 * *************************************** */
@@ -119,4 +127,4 @@ async function registerAccount(req, res) {
 }
 
 
-module.exports = { buildLogin, buildRegister, accountLogin, registerAccount, buildManagement}
+module.exports = { buildLogin, buildRegister, accountLogin, registerAccount, buildManagement, addReview}

@@ -177,6 +177,39 @@ nav a:hover{
   padding-bottom: 30px;
 }
 
+.review-form {
+  display: block;
+}
+
+.review-container {
+  position: absolute;
+  margin-top: -6rem;
+  margin-left: 28rem;
+}
+
+.review-container h2 {
+  padding: 5px;
+  margin: 0;
+  font-size: large;
+}
+
+.vehicle-head {
+  margin-top: -20px;
+}
+
+.review-btn {
+  width: 300px;
+  height: 30px;
+  background-color: rgb(77, 207, 240);
+  cursor: pointer;
+  border: 2px rgb(77, 207, 240) solid;
+  border-radius: 5px;
+}
+
+.review-text {
+  width: 300px;
+}
+
 .vehicle-info {
   display: flex;
   margin-left: 2rem;

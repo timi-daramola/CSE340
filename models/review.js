@@ -1,11 +1,11 @@
 const pool = require("../database/")
 
 // Create a new review
-const createReview = async (accountId, invId, rating, reviewText) => {
+async function createReview (inv_id, rating, review_text){
     try {
         const result = await m('pool.query')(
-            'INSERT INTO reviews (account_id, inv_id, rating, review_text) VALUES ($1, $2, $3, $4) RETURNING review_id, account_id, inv_id, rating, review_text, review_date',
-            [accountId, invId, rating, reviewText]
+            'INSERT INTO reviews (inv_id, rating, review_text) VALUES ($1, $2, $3, $4) RETURNING review_id, account_id, inv_id, rating, review_text, review_date',
+            [account_id, inv_id, rating, review_text]
         );
         return result.rows[0];
     } catch (err) {
