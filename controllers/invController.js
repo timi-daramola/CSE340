@@ -63,7 +63,7 @@ invCont.managementView = async function (req, res) {
 invCont.buildManagementView = async function (req, res, next){
     let nav = await utilities.getNav()
     const classificationSelect = await utilities.buildClassificationList()
-    res.render("./inv/inventoryManagement", {
+    res.render("./inv/management", {
         title: 'Inventory Management',
         flashMessage: flashMessage});
 };

@@ -6,9 +6,8 @@ const utilities = require("../utilities")
 
 
 // Process the login request
-// router.post("/login", regValidate.loginRules(), regValidate.checkLoginData,
-//     utilities.handleErrors(accountController.accountLogin)
-//   )
+router.post("/login", utilities.handleErrors(accountController.accountLogin)
+)
 
 router.post('/register', utilities.handleErrors(accountController.registerAccount))
 
